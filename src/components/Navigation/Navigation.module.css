@@ -1,0 +1,14 @@
+.link {
+  text-decoration: none;
+  color: black;
+}
+
+.active {
+  margin-bottom: 7px;
+  border-bottom: 3px solid red;
+}
+
+.navList {
+  display: flex;
+  gap: 10px;
+}
