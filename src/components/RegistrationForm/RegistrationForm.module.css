@@ -1,0 +1,16 @@
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  margin-bottom: 10px;
+}
+
+.registrationContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.registrationTitle {
+  margin-bottom: 10px;
+}
