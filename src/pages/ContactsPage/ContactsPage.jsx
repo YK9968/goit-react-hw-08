@@ -9,14 +9,21 @@ import ContactList from "../../components/ContactList/ContactList";
 import SearchBox from "../../components/SearchBox/SearchBox";
 import Loader from "../../components/Loader/Loader";
 import Error from "../../components/Error/Error";
+import { selectIsLoggedIn } from "../../redux/auth/selectors";
 
 export default function ContactsPage() {
   const dispatch = useDispatch();
   const isLoading = useSelector(selectIsLoading);
   const isError = useSelector(selectIsError);
+  const isLogggedIn = useSelector(selectIsLoggedIn);
+
   useEffect(() => {
+    if (!isLogggedIn) {
+      return;
+    }
+
     dispatch(fetchAllContacts());
-  }, [dispatch]);
+  }, [dispatch, isLogggedIn]);
   return (
     <div>
       <div className={css.loaderContainer}>
