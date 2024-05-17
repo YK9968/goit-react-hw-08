@@ -1,13 +1,10 @@
 import { FaUser } from "react-icons/fa6";
 import { FaPhoneAlt } from "react-icons/fa";
 import css from "./Contact.module.css";
-
-import { useDispatch } from "react-redux";
-import { deleteContact } from "../../redux/contacts/operations";
+import ModalConfirmDeleteContact from "../ModalConfirmDeleteContact/ModalConfirmDeleteContact";
+import ModalEditContact from "../ModalEditContact/ModalEditContact";
 
 export default function Contact({ contact: { name, number, id } }) {
-  const dispatch = useDispatch();
-
   return (
     <>
       <div>
@@ -20,14 +17,11 @@ export default function Contact({ contact: { name, number, id } }) {
           {number}
         </p>
       </div>
-      <button
-        onClick={() => {
-          dispatch(deleteContact(id));
-        }}
-        className={css.btnDelete}
-      >
-        Delete
-      </button>
+
+      <div className={css.modalsContainer}>
+        <ModalEditContact id={id} />
+        <ModalConfirmDeleteContact id={id} />
+      </div>
     </>
   );
 }

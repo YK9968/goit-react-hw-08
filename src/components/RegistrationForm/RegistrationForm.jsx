@@ -3,14 +3,22 @@ import { useId } from "react";
 import css from "./RegistrationForm.module.css";
 import { useDispatch } from "react-redux";
 import { registr } from "../../redux/auth/operations";
+import toast from "react-hot-toast";
 export default function RegistrationForm() {
   const nameId = useId();
   const emailId = useId();
   const passwordId = useId();
   const dispatch = useDispatch();
   const handleSubmit = (values, actions) => {
-    dispatch(registr(values));
-    actions.resetForm();
+    dispatch(registr(values))
+      .unwrap()
+      .then(() => {
+        toast.success("Success");
+        actions.resetForm();
+      })
+      .catch(() => {
+        toast.error("Oops, something went wrong. Try again");
+      });
   };
 
   const initialValues = {

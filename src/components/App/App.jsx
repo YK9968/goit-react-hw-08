@@ -21,41 +21,43 @@ export default function App() {
   }, [dispatch]);
 
   return (
-    <Layout>
+    <div>
       {isRefreshing ? (
         <Loader />
       ) : (
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route
-            path="/register"
-            element={
-              <RestrictedRoute
-                component={<RegistrationPage />}
-                redirectTo={"/"}
-              />
-            }
-          />
-          <Route
-            path="/login"
-            element={
-              <RestrictedRoute
-                component={<LoginPage />}
-                redirectTo={"/contacts"}
-              />
-            }
-          />
-          <Route
-            path="/contacts"
-            element={
-              <PrivateRoute
-                component={<ContactsPage />}
-                redirectTo={"/login"}
-              />
-            }
-          />
-        </Routes>
+        <Layout>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route
+              path="/register"
+              element={
+                <RestrictedRoute
+                  component={<RegistrationPage />}
+                  redirectTo={"/"}
+                />
+              }
+            />
+            <Route
+              path="/login"
+              element={
+                <RestrictedRoute
+                  component={<LoginPage />}
+                  redirectTo={"/contacts"}
+                />
+              }
+            />
+            <Route
+              path="/contacts"
+              element={
+                <PrivateRoute
+                  component={<ContactsPage />}
+                  redirectTo={"/login"}
+                />
+              }
+            />
+          </Routes>
+        </Layout>
       )}
-    </Layout>
+    </div>
   );
 }

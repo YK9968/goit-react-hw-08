@@ -3,6 +3,7 @@ import { Field, Form, Formik } from "formik";
 import { useId } from "react";
 import { logIn } from "../../redux/auth/operations";
 import { useDispatch } from "react-redux";
+import toast from "react-hot-toast";
 
 export default function LogInForm() {
   const emailId = useId();
@@ -11,8 +12,15 @@ export default function LogInForm() {
   const dispatch = useDispatch();
 
   const handleSubmit = (values, actions) => {
-    dispatch(logIn(values));
-    actions.resetForm();
+    dispatch(logIn(values))
+      .unwrap()
+      .then(() => {
+        toast.success("Successful authorization");
+        actions.resetForm();
+      })
+      .catch(() => {
+        toast.error("Oops, something went wrong. Try again");
+      });
   };
 
   const initialValues = {

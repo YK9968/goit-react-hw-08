@@ -7,10 +7,7 @@ export default function HomePage() {
     <div>
       <h1>Welcome {user.name}!</h1>
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi dolores
-        maiores nulla consectetur eveniet excepturi, ratione, quia enim porro
-        quis explicabo molestias ea? In qui molestias, temporibus enim vitae
-        ducimus.
+        This service will help you store contacts in your personal phone book.
       </p>
     </div>
   );
