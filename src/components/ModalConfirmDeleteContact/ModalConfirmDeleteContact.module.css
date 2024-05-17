@@ -23,7 +23,7 @@
 .btnContainer .btnYes {
   color: black;
   font-weight: 700;
-  transition: border ease-in-out 100ms;
+  transition: border ease-in-out 0ms;
 }
 .btnContainer .btnYes:hover {
   border: 1.5px solid rgb(199, 66, 75);
@@ -34,7 +34,7 @@
 .btnContainer .btnNo {
   color: black;
   font-weight: 700;
-  transition: border ease-in-out 100ms;
+  transition: border ease-in-out 0ms;
 }
 .btnContainer .btnNo:hover {
   border: 1.5px solid rgb(83, 125, 174);
