@@ -9,17 +9,17 @@ import { editContact } from "../../redux/contacts/operations";
 
 import { Field, Form, Formik } from "formik";
 
-export default function ModalEditContact({ id }) {
+export default function ModalEditContact({ name, number, id }) {
   const style = {
     position: "absolute",
     top: "50%",
     left: "50%",
     transform: "translate(-50%, -50%)",
-    width: 400,
+    width: 300,
     bgcolor: "background.paper",
     boxShadow: 14,
     borderRadius: "10px",
-    p: 4,
+    p: 3,
   };
 
   const dispatch = useDispatch();
@@ -38,9 +38,9 @@ export default function ModalEditContact({ id }) {
   const numberId = useId();
 
   const initialValues = {
-    name: "",
-    number: "",
-    id: id,
+    name,
+    number,
+    id,
   };
 
   return (
@@ -57,17 +57,33 @@ export default function ModalEditContact({ id }) {
         <Box sx={style}>
           <h2>Edit contact</h2>
           <Formik initialValues={initialValues} onSubmit={handlEditContact}>
-            <Form>
+            <Form className={css.formContainer}>
               <div className={css.inputContainer}>
                 <label htmlFor={nameId}>Name</label>
-                <Field name="name" type="text" id={nameId} />
+                <Field
+                  className={css.inputFormEdit}
+                  name="name"
+                  type="text"
+                  id={nameId}
+                />
               </div>
               <div className={css.inputContainer}>
                 <label htmlFor={numberId}>Number</label>
-                <Field name="number" type="text" id={numberId} />
+                <Field
+                  className={css.inputFormEdit}
+                  name="number"
+                  type="text"
+                  id={numberId}
+                />
               </div>
-              <button type="submit">Save</button>
-              <button onClick={handleClose}>Close</button>
+              <div className={css.btnContainer}>
+                <Button className={css.btnYes} type="submit">
+                  Save
+                </Button>
+                <Button className={css.btnNo} onClick={handleClose}>
+                  Close
+                </Button>
+              </div>
             </Form>
           </Formik>
         </Box>

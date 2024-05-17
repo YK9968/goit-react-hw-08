@@ -14,3 +14,26 @@
 .registrationTitle {
   margin-bottom: 10px;
 }
+
+.error {
+  color: rgb(199, 66, 75);
+}
+
+.nameContainer {
+  display: flex;
+  gap: 20px;
+}
+
+.registrBtn {
+  background-color: rgb(116, 106, 255);
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  color: rgb(255, 255, 255);
+  padding: 5px 10px;
+}
+
+.registrBtn:hover {
+  background-color: rgb(88, 81, 196);
+  cursor: pointer;
+}

@@ -9,7 +9,7 @@ export default function SearchBox() {
 
   return (
     <div className={css.containerSearcBox}>
-      <p>Find contacts by name</p>
+      <p>Find contacts</p>
       <input
         value={value}
         onChange={(evt) => dispatch(changeFilter(evt.target.value))}

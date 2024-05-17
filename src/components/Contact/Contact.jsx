@@ -14,12 +14,12 @@ export default function Contact({ contact: { name, number, id } }) {
         </p>
         <p>
           <FaPhoneAlt className={css.iconContact} />
-          {number}
+          {`+380${number}`}
         </p>
       </div>
 
       <div className={css.modalsContainer}>
-        <ModalEditContact id={id} />
+        <ModalEditContact name={name} number={number} id={id} />
         <ModalConfirmDeleteContact id={id} />
       </div>
     </>

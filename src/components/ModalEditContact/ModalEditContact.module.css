@@ -4,14 +4,54 @@
   height: 20px;
 }
 .editBtn:hover {
-  color: blue;
+  color: rgb(88, 81, 196);
+}
+
+.modalContainer .openBtn {
+  min-width: 23px;
+  min-height: 23px;
+  padding: 0;
 }
 
 .modalContainer .openBtn:hover {
   background-color: transparent;
 }
-.modalContainer .openBtn {
-  min-width: 23px;
-  min-height: 23px;
+
+.btnContainer .btnYes {
+  color: black;
+  font-weight: 700;
+  padding: 2px;
+  transition: border ease-in-out 100ms;
+}
+.btnContainer .btnYes:hover {
+  border: 1.5px solid rgb(199, 66, 75);
+  font-weight: 700;
+  background-color: transparent;
   padding: 0;
+}
+.btnContainer .btnNo {
+  color: black;
+  font-weight: 700;
+  padding: 2px;
+  transition: border ease-in-out 100ms;
+}
+.btnContainer .btnNo:hover {
+  border: 1.5px solid rgb(83, 125, 174);
+  font-weight: 700;
+  background-color: transparent;
+  padding: 0;
+}
+
+.inputFormEdit {
+  width: 250px;
+  height: 30px;
+}
+
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  border-radius: 5px;
+  align-items: center;
+  gap: 10px;
 }

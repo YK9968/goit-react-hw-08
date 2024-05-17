@@ -25,8 +25,8 @@ export default function ContactForm() {
       .max(50, "Too Long!")
       .required("Required"),
     number: Yup.string()
-      .min(3, "Too Short!")
-      .max(50, "Too Long!")
+      .min(9, "Too Short!")
+      .max(9, "Too Long!")
       .required("Required"),
   });
 
@@ -40,24 +40,33 @@ export default function ContactForm() {
     >
       <Form className={css.formContainer}>
         <div className={css.formContainerItem}>
-          <label htmlFor={nameId}>Name</label>
+          <div className={css.errorContainer}>
+            <label htmlFor={nameId}>Name</label>
+            <ErrorMessage className={css.error} name="name" component="span" />
+          </div>
+
           <Field
             className={css.inputFormName}
             type="text"
             name="name"
             id={nameId}
           />
-          <ErrorMessage className={css.error} name="name" component="span" />
         </div>
         <div className={css.formContainerItem}>
-          <label htmlFor={numberId}>Number</label>
+          <div className={css.errorContainer}>
+            <label htmlFor={numberId}>Number</label>
+            <ErrorMessage
+              className={css.error}
+              name="number"
+              component="span"
+            />
+          </div>
           <Field
             className={css.inputFormNumber}
-            type="text"
+            type="number"
             name="number"
             id={numberId}
           />
-          <ErrorMessage className={css.error} name="number" component="span" />
         </div>
         <button className={css.btnForm} type="submit">
           Add contact

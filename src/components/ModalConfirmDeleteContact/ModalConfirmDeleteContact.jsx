@@ -15,10 +15,12 @@ export default function ModalConfirmDeleteContact({ id }) {
     left: "50%",
     transform: "translate(-50%, -50%)",
     width: 400,
+    height: 210,
     bgcolor: "background.paper",
     boxShadow: 14,
     borderRadius: "10px",
     p: 4,
+    textAlign: "center",
   };
 
   const dispatch = useDispatch();
@@ -52,8 +54,14 @@ export default function ModalConfirmDeleteContact({ id }) {
             contact
           </Typography>
 
-          <Button onClick={handlDeleteContact}>Yes</Button>
-          <Button onClick={handleClose}>No</Button>
+          <div className={css.btnContainer}>
+            <Button className={css.btnYes} onClick={handlDeleteContact}>
+              Yes
+            </Button>
+            <Button className={css.btnNo} onClick={handleClose}>
+              No
+            </Button>
+          </div>
         </Box>
       </Modal>
     </div>

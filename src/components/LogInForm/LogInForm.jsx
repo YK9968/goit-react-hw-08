@@ -41,7 +41,9 @@ export default function LogInForm() {
             <label htmlFor={passwordId}>Password</label>
             <Field name="password" type="password" id={passwordId} />
           </div>
-          <button type="submit">Log In</button>
+          <button className={css.loginBtn} type="submit">
+            Log In
+          </button>
         </Form>
       </Formik>
     </div>
