@@ -77,10 +77,10 @@ export default function ModalEditContact({ name, number, id }) {
                 />
               </div>
               <div className={css.btnContainer}>
-                <Button className={css.btnYes} type="submit">
+                <Button className={css.btnNo} type="submit">
                   Save
                 </Button>
-                <Button className={css.btnNo} onClick={handleClose}>
+                <Button className={css.btnYes} onClick={handleClose}>
                   Close
                 </Button>
               </div>

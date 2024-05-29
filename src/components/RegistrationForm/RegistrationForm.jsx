@@ -14,11 +14,13 @@ export default function RegistrationForm() {
     dispatch(registr(values))
       .unwrap()
       .then(() => {
-        toast.success("Success");
+        toast.success("Success registration");
         actions.resetForm();
       })
       .catch(() => {
-        toast.error("Oops, something went wrong. Try again");
+        toast.error(
+          "I'm sorry, the user is already registered with this email."
+        );
       });
   };
 
